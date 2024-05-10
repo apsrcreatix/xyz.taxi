@@ -1,4 +1,12 @@
-import { Flex, Text, Button, Theme, Container } from "@radix-ui/themes";
+import {
+  Flex,
+  Text,
+  Button,
+  Theme,
+  Container,
+  Heading,
+  TextField,
+} from "@radix-ui/themes";
 import useUserPreferrredTheme from "./hooks/useUserPreferredTheme";
 
 function App() {
@@ -7,26 +15,32 @@ function App() {
     <Theme
       accentColor="iris"
       grayColor="sand"
-      radius="large"
-      scaling="95%"
+      radius="full"
       appearance={themeType}
     >
-      <Container>
-        <Flex direction="column" gap="2">
-          <Text>Coming Soon</Text>
-          <Text>🚖 XYZ Taxi 🚕</Text>
-          <div className="card">
-            <Button
-              onClick={() =>
-                alert(
-                  "Oops! Sorry, we are full at this time, we are working on it and will get back to you soon!"
-                )
-              }
-            >
-              Request Access
-            </Button>
-            <Text>🧪 Compare, 💅🏼 Select, ✅ Book</Text>
-          </div>
+      <Container className="emoji-background">
+        <Flex
+          maxHeight="100vh"
+          height="100vh"
+          width="100%"
+          direction="column"
+          gap="6"
+          align="center"
+          justify="center"
+        >
+          <Text color="gray" size="2" weight="bold">
+            Coming Soon
+          </Text>
+          <Heading size="9">
+            🚖 xyz <span style={{ color: "yellowgreen" }}>.</span>
+            <span style={{ color: "gold" }}> Taxi</span> 🚕
+          </Heading>
+          <TextField.Root size="3" placeholder="We don't spam emails">
+            <TextField.Slot side="right" px="1">
+              <Button size="2">Get Early Access</Button>
+            </TextField.Slot>
+          </TextField.Root>
+          <Text size="4">{`🚶🏽‍♂️‍➡️ Compare  👨🏽‍🚀 Select  🚀 Book`}</Text>
         </Flex>
       </Container>
     </Theme>
