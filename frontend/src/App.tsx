@@ -55,7 +55,7 @@ function App() {
                 .fill(0)
                 .map((element, index) => {
                   return (
-                    <React.Fragment key={index}>
+                    <React.Fragment key={index+String(element)}>
                       <Avatar
                         src={`https://100k-faces.glitch.me/random-image?test=${index}`}
                         fallback="A"
